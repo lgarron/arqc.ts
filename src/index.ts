@@ -48,7 +48,7 @@ export class ArqBackupPlan {
 
 	async wasLatestBackupSuccessful(): Promise<boolean> {
 		const json = await this.latestBackupActivityJSON();
-		return json.errorCount === 0 && json.aborted;
+		return json.errorCount === 0 && !json.aborted;
 	}
 
 	async start() {
