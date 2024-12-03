@@ -1,0 +1,19 @@
+{
+	"name": "arqc",
+	"version": "v0.1.0",
+	"license": "MIT",
+	"author": "Lucas Garron",
+	"description": "A wrapper for the `arqc` command.",
+	"repository": "github:lgarron/arqc.js",
+	"type": "module",
+	"main": "./src/index.ts",
+	"exports": {
+		".": {
+			"import": "./src/index.ts",
+			"types": "./src/index.ts"
+		}
+	},
+	"dependencies": {
+		"@types/bun": "^1.1.14"
+	}
+}
