@@ -26,16 +26,14 @@ export interface BackupActivityJSON {
     aborted: boolean;
     dataVersion: number;
 }
+export interface ArqBackupPlanConfig {
+    backupPlanID: string;
+    name?: string;
+}
 export declare class ArqBackupPlan {
     #private;
-    config: {
-        backupPlanID: string;
-        name?: string;
-    };
-    constructor(config: {
-        backupPlanID: string;
-        name?: string;
-    });
+    config: ArqBackupPlanConfig;
+    constructor(config: ArqBackupPlanConfig);
     latestBackupActivityJSON(): Promise<BackupActivityJSON>;
     latestBackupActivityLog(): Promise<string>;
     wasLatestBackupSuccessful(): Promise<boolean>;

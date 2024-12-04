@@ -26,12 +26,14 @@ export interface BackupActivityJSON {
 	dataVersion: number;
 }
 
+export interface ArqBackupPlanConfig {
+	backupPlanID: string;
+	name?: string;
+}
+
 export class ArqBackupPlan {
 	constructor(
-		public config: {
-			backupPlanID: string;
-			name?: string;
-		},
+		public config: ArqBackupPlanConfig,
 	) {}
 
 	#runSimpleCommand(commandName: string): ShellPromise {
