@@ -5,6 +5,10 @@ import { arqcCommand } from "./arqcCommand";
 // This is unimplemented due to a security/correctness issue.
 // export function listBackupPlans(): ArqBackupPlan[] {}
 
+export async function acceptLicenseAgreement(): Promise<void> {
+	await $`${arqcCommand.path} acceptLicenseAgreement`;
+}
+
 // Note: `arqc` accepts a negative number and/or fractional amount of minutes, so we allow this as well.
 export async function pauseBackups(minutes: number): Promise<void> {
 	await $`${arqcCommand.path} pauseBackups ${minutes}`;

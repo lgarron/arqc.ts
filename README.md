@@ -8,6 +8,6 @@ See implementation files for details.
 
 ````ts
 export { type BackupActivityJSON, type ArqBackupPlanConfig, ArqBackupPlan, } from "./ArqBackupPlan";
-export { pauseBackups, resumeBackups, listBackupPlans } from "./globalCommands";
+export { acceptLicenseAgreement, pauseBackups, resumeBackups, listBackupPlans, } from "./globalCommands";
 export { setArqcCommandPath } from "./arqcCommand";
 ````
