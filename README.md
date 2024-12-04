@@ -43,5 +43,5 @@ export declare class ArqBackupPlan {
     stop(): Promise<void>;
 }
 export declare function pauseBackups(minutes: number): Promise<void>;
-export declare function resumeBackups(minutes: number): Promise<void>;
+export declare function resumeBackups(): Promise<void>;
 ````

@@ -68,7 +68,6 @@ export async function pauseBackups(minutes: number): Promise<void> {
 	await $`${arqcCommandPath} pauseBackups ${minutes}`;
 }
 
-// Note: `arqc` accepts a negative number and/or fractional amount of minutes, so we allow this as well.
-export async function resumeBackups(minutes: number): Promise<void> {
+export async function resumeBackups(): Promise<void> {
 	await $`${arqcCommandPath} resumeBackups}`;
 }
