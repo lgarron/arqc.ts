@@ -17,8 +17,7 @@ format:
 		"npx tsc --project . && cat ./.temp/types/index.d.ts"
 
 .PHONY: prepublishOnly
-prepublishOnly:
-	lint
+prepublishOnly: lint
 
 .PHONY: clean
 clean:
