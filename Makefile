@@ -19,3 +19,11 @@ format:
 .PHONY: prepublishOnly
 prepublishOnly:
 	lint
+
+.PHONY: clean
+clean:
+	rm -rf ./.temp
+
+.PHONY: reset
+reset:
+	rm -rf ./node_modules
