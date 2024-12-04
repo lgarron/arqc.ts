@@ -4,3 +4,4 @@ export {
 	ArqBackupPlan,
 } from "./ArqBackupPlan";
 export { pauseBackups, resumeBackups, listBackupPlans } from "./globalCommands";
+export { setArqcCommandPath } from "./arqcCommand";
