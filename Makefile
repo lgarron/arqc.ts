@@ -16,6 +16,11 @@ format:
 		--fence ts \
 		"npx tsc --project . && cat ./.temp/types/index.d.ts"
 
+.PHONY: publish
+publish:
+	# https://github.com/lgarron/repo
+	repo publish
+
 .PHONY: prepublishOnly
 prepublishOnly: lint
 
