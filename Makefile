@@ -5,6 +5,7 @@ setup:
 
 .PHONY: lint
 lint:
+	# TODO: type bundling (https://github.com/microsoft/TypeScript/issues/4433#issuecomment-1575099575)
 	bun x readme-cli-help \
 		--check-only \
 		--fence ts \
@@ -12,6 +13,7 @@ lint:
 
 .PHONY: format
 format:
+	# TODO: type bundling (https://github.com/microsoft/TypeScript/issues/4433#issuecomment-1575099575)
 	bun x readme-cli-help \
 		--fence ts \
 		"npx tsc --project . && cat ./.temp/types/index.d.ts"

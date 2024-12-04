@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"moduleResolution": "bundler",
 		"strict": true,
 		"target": "es2022",
 		"module": "es2022",
@@ -7,14 +8,14 @@
 		"emitDeclarationOnly": true,
 		"outDir": "./.temp/types/",
 		"skipLibCheck": true,
-    "allowJs": true,
-    "alwaysStrict": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitOverride": true,
-    "noUnusedLocals": true,
-    "strictNullChecks": true,
-    "noFallthroughCasesInSwitch": true,
+		"allowJs": true,
+		"alwaysStrict": true,
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noImplicitOverride": true,
+		"noUnusedLocals": true,
+		"strictNullChecks": true,
+		"noFallthroughCasesInSwitch": true
 	},
 	"files": ["./src/index.ts"]
 }
