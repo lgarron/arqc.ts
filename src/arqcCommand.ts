@@ -1,5 +1,5 @@
 export const arqcCommand = {
-	path: "/Applications/Arq.app/Contents/Resources/arqc",
+	path: "arqc",
 };
 export function setArqcCommandPath(newPath: string) {
 	arqcCommand.path = newPath;
