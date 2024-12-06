@@ -2,6 +2,10 @@
 
 A wrapper for the [`arqc`](https://www.arqbackup.com/documentation/arq7/English.lproj/arqc.html) command.
 
+## TypeScript package
+
+This package is published as TypeScript source files. You will need to use a compatible bundler (such as `esbuild`) or runtime (such as `bun`) to import this code.
+
 ## API
 
 ````ts
