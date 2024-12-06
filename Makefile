@@ -9,14 +9,14 @@ lint:
 	bun x readme-cli-help \
 		--check-only \
 		--fence ts \
-		"npx tsc --project . && cat ./.temp/types/index.d.ts"
+		"./script/bundle-types.ts 1>&2 && cat ./.temp/types/index.d.ts"
 
 .PHONY: format
 format:
 	# TODO: type bundling (https://github.com/microsoft/TypeScript/issues/4433#issuecomment-1575099575)
 	bun x readme-cli-help \
 		--fence ts \
-		"npx tsc --project . && cat ./.temp/types/index.d.ts"
+		"./script/bundle-types.ts 1>&2 && cat ./.temp/types/index.d.ts"
 
 .PHONY: publish
 publish:
