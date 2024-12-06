@@ -31,4 +31,4 @@ clean:
 
 .PHONY: reset
 reset:
-	rm -rf ./node_modules
+	rm -rf ./.husky/_ ./node_modules
