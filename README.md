@@ -19,14 +19,14 @@ interface BackupActivityJSON {
     subType: string;
     countOfBytesUploaded: number;
     updatedTime: number;
-    abortReason: string;
+    abortReason?: string;
     type: string;
     backupPlanDbId: number;
     finishedTime: number;
     activityLogPath: string;
     errorCount: number;
     backupSetUUID: string;
-    aborted: boolean;
+    aborted?: boolean;
     dataVersion: number;
 }
 interface ArqBackupPlanConfig {
