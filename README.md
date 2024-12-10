@@ -26,7 +26,7 @@ interface BackupActivityJSON {
     activityLogPath: string;
     errorCount: number;
     backupSetUUID: string;
-    aborted?: boolean;
+    aborted: boolean;
     dataVersion: number;
 }
 interface ArqBackupPlanConfig {

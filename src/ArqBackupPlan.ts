@@ -18,7 +18,8 @@ export interface BackupActivityJSON {
 	activityLogPath: string;
 	errorCount: number;
 	backupSetUUID: string;
-	aborted?: boolean;
+	// Note: this may still be `false` for an aborted activity when the post-backup script is running.
+	aborted: boolean;
 	dataVersion: number;
 }
 
