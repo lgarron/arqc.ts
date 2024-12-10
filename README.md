@@ -9,9 +9,8 @@ This package is published as TypeScript source files. You will need to use a com
 ## API
 
 ````ts
-interface BackupActivityJSON {
+interface CommonBackupActivityJSONFields {
     aborted: boolean;
-    abortReason?: string;
     activityLogPath: string;
     backupPlanDbId: number;
     backupSetUUID: string;
@@ -23,12 +22,22 @@ interface BackupActivityJSON {
     dataVersion: number;
     errorCount: number;
     finishedTime: number;
-    message: string;
     subType: string;
     type: string;
     updatedTime: number;
     uuid: string;
 }
+interface InProgressBackupActivityJSON extends CommonBackupActivityJSONFields {
+    message: string;
+}
+interface FinishedBackupActivityJSON extends CommonBackupActivityJSONFields {
+    message: "Idle";
+    abortReason?: string;
+    totalBytes: 0;
+    totalFiles: 0;
+}
+type BackupActivityJSON = InProgressBackupActivityJSON & FinishedBackupActivityJSON;
+declare function backupActivityJSONAsFinished(backupActivityJSON: BackupActivityJSON): FinishedBackupActivityJSON | null;
 interface ArqBackupPlanConfig {
     backupSetUUID: string;
     name?: string;
@@ -52,5 +61,5 @@ declare function listBackupPlans(): Promise<ArqBackupPlan[]>;
 
 declare function setArqcCommandPath(newPath: string): void;
 
-export { ArqBackupPlan, type ArqBackupPlanConfig, type BackupActivityJSON, acceptLicenseAgreement, listBackupPlans, pauseBackups, resumeBackups, setArqcCommandPath };
+export { ArqBackupPlan, type ArqBackupPlanConfig, type BackupActivityJSON, type FinishedBackupActivityJSON, type InProgressBackupActivityJSON, acceptLicenseAgreement, backupActivityJSONAsFinished, listBackupPlans, pauseBackups, resumeBackups, setArqcCommandPath };
 ````

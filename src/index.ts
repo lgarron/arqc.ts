@@ -2,6 +2,9 @@ export {
 	type BackupActivityJSON,
 	type ArqBackupPlanConfig,
 	ArqBackupPlan,
+	backupActivityJSONAsFinished,
+	FinishedBackupActivityJSON,
+	InProgressBackupActivityJSON,
 } from "./ArqBackupPlan";
 export {
 	acceptLicenseAgreement,

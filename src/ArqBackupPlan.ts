@@ -1,10 +1,9 @@
 import { $, type ShellPromise } from "bun";
 import { arqcCommand } from "./arqcCommand";
 
-export interface BackupActivityJSON {
+interface CommonBackupActivityJSONFields {
 	// Note: `"aborted"` may still be `false` for an aborted activity when the post-backup script is running.
 	aborted: boolean;
-	abortReason?: string;
 	activityLogPath: string;
 	backupPlanDbId: number;
 	backupSetUUID: string;
@@ -16,11 +15,44 @@ export interface BackupActivityJSON {
 	dataVersion: number;
 	errorCount: number;
 	finishedTime: number;
-	message: string;
 	subType: string;
 	type: string;
 	updatedTime: number;
 	uuid: string;
+}
+export interface InProgressBackupActivityJSON
+	extends CommonBackupActivityJSONFields {
+	// We'd use `Exclude<string, "Idle">`, but that is currently treated as `string` in TypeScript
+	message: string;
+}
+
+export interface FinishedBackupActivityJSON
+	extends CommonBackupActivityJSONFields {
+	message: "Idle";
+	abortReason?: string;
+	totalBytes: 0;
+	totalFiles: 0;
+}
+
+// Note: this should be `|` rather than `&`, but this is `&` due to TypeScript
+// limitations.
+//
+// This means that `if (backupActivityJSON.message === "Idle")` unfortunately
+// cannot type narrow the type of backupActivityJSON from `BackupActivityJSON`
+// to `FinishedBackupActivityJSON` inside the `if` block where the condition is
+// true. We provide the `backupActivityJSONAsFinished(…)` function for this.
+export type BackupActivityJSON = InProgressBackupActivityJSON &
+	FinishedBackupActivityJSON;
+
+// Applies a heuristic to return `FinishedBackupActivityJSON` if and only if the backup has finished.
+// Current heuristic: check if the `"message"` field is `"Idle"`.
+export function backupActivityJSONAsFinished(
+	backupActivityJSON: BackupActivityJSON,
+): FinishedBackupActivityJSON | null {
+	if (backupActivityJSON.message === "Idle") {
+		return backupActivityJSON as FinishedBackupActivityJSON;
+	}
+	return null;
 }
 
 export interface ArqBackupPlanConfig {
