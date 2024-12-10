@@ -35,7 +35,10 @@ export interface FinishedBackupActivityJSON
 }
 
 // Note: this should be `|` rather than `&`, but this is `&` due to TypeScript
-// limitations.
+// limitations. See:
+//
+// - https://github.com/microsoft/TypeScript/issues/55239#issuecomment-1662572540
+// - https://github.com/microsoft/TypeScript/issues/4196
 //
 // This means that `if (backupActivityJSON.message === "Idle")` unfortunately
 // cannot type narrow the type of backupActivityJSON from `BackupActivityJSON`
