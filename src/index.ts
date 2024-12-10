@@ -3,8 +3,8 @@ export {
 	type ArqBackupPlanConfig,
 	ArqBackupPlan,
 	backupActivityJSONAsFinished,
-	FinishedBackupActivityJSON,
-	InProgressBackupActivityJSON,
+	type FinishedBackupActivityJSON,
+	type InProgressBackupActivityJSON,
 } from "./ArqBackupPlan";
 export {
 	acceptLicenseAgreement,
