@@ -10,24 +10,24 @@ This package is published as TypeScript source files. You will need to use a com
 
 ````ts
 interface BackupActivityJSON {
-    countOfFilesUploaded: number;
-    uuid: string;
-    createdTime: number;
-    message: string;
-    countOfBytes: number;
-    countOfFiles: number;
-    subType: string;
-    countOfBytesUploaded: number;
-    updatedTime: number;
-    abortReason?: string;
-    type: string;
-    backupPlanDbId: number;
-    finishedTime: number;
-    activityLogPath: string;
-    errorCount: number;
-    backupSetUUID: string;
     aborted: boolean;
+    abortReason?: string;
+    activityLogPath: string;
+    backupPlanDbId: number;
+    backupSetUUID: string;
+    countOfBytes: number;
+    countOfBytesUploaded: number;
+    countOfFiles: number;
+    countOfFilesUploaded: number;
+    createdTime: number;
     dataVersion: number;
+    errorCount: number;
+    finishedTime: number;
+    message: string;
+    subType: string;
+    type: string;
+    updatedTime: number;
+    uuid: string;
 }
 interface ArqBackupPlanConfig {
     backupSetUUID: string;

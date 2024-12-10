@@ -2,25 +2,25 @@ import { $, type ShellPromise } from "bun";
 import { arqcCommand } from "./arqcCommand";
 
 export interface BackupActivityJSON {
-	countOfFilesUploaded: number;
-	uuid: string;
-	createdTime: number;
-	message: string;
-	countOfBytes: number;
-	countOfFiles: number;
-	subType: string;
-	countOfBytesUploaded: number;
-	updatedTime: number;
-	abortReason?: string;
-	type: string;
-	backupPlanDbId: number;
-	finishedTime: number;
-	activityLogPath: string;
-	errorCount: number;
-	backupSetUUID: string;
-	// Note: this may still be `false` for an aborted activity when the post-backup script is running.
+	// Note: `"aborted"` may still be `false` for an aborted activity when the post-backup script is running.
 	aborted: boolean;
+	abortReason?: string;
+	activityLogPath: string;
+	backupPlanDbId: number;
+	backupSetUUID: string;
+	countOfBytes: number;
+	countOfBytesUploaded: number;
+	countOfFiles: number;
+	countOfFilesUploaded: number;
+	createdTime: number;
 	dataVersion: number;
+	errorCount: number;
+	finishedTime: number;
+	message: string;
+	subType: string;
+	type: string;
+	updatedTime: number;
+	uuid: string;
 }
 
 export interface ArqBackupPlanConfig {
