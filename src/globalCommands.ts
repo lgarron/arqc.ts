@@ -19,7 +19,7 @@ export async function resumeBackups(): Promise<void> {
 }
 
 const regex =
-	/^UUID=(?<backupSetUUID>[A-F0-9\-]+)\tname="(?<name>[^"]+)"\tstorage location="(?<storageLocation>[^"]+)"/;
+	/^UUID=(?<backupSetUUID>[A-F0-9-]+)\tname="(?<name>[^"]+)"\tstorage location="(?<storageLocation>[^"]+)"/;
 
 function countDoubleQuotes(s: string): number {
 	let count = 0;

@@ -54,12 +54,12 @@ declare class ArqBackupPlan {
     stop(): Promise<void>;
 }
 
+declare function setArqcCommandPath(newPath: string): void;
+
 declare function acceptLicenseAgreement(): Promise<void>;
 declare function pauseBackups(minutes: number): Promise<void>;
 declare function resumeBackups(): Promise<void>;
 declare function listBackupPlans(): Promise<ArqBackupPlan[]>;
-
-declare function setArqcCommandPath(newPath: string): void;
 
 export { ArqBackupPlan, type ArqBackupPlanConfig, type BackupActivityJSON, type FinishedBackupActivityJSON, type InProgressBackupActivityJSON, acceptLicenseAgreement, backupActivityJSONAsFinished, listBackupPlans, pauseBackups, resumeBackups, setArqcCommandPath };
 ````

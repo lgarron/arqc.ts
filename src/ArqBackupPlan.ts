@@ -1,4 +1,4 @@
-import { $, type ShellPromise } from "bun";
+import { $ } from "bun";
 import { arqcCommand } from "./arqcCommand";
 
 interface CommonBackupActivityJSONFields {
@@ -67,7 +67,7 @@ export interface ArqBackupPlanConfig {
 export class ArqBackupPlan {
 	constructor(public config: ArqBackupPlanConfig) {}
 
-	#runSimpleCommand(commandName: string): ShellPromise {
+	#runSimpleCommand(commandName: string): $.ShellPromise {
 		return $`${arqcCommand.path} ${commandName} ${this.config.backupSetUUID}`;
 	}
 
