@@ -1,6 +1,6 @@
 {
   "name": "arqc",
-  "version": "0.3.7",
+  "version": "0.3.8-dev",
   "description": "A wrapper for the `arqc` command.",
   "author": "Lucas Garron",
   "license": "MIT",
