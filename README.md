@@ -8,7 +8,7 @@ This package is published as TypeScript source files. You will need to use a com
 
 ## API
 
-````ts
+````ts help
 interface CommonBackupActivityJSONFields {
     aborted: boolean;
     activityLogPath: string;

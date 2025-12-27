@@ -1,21 +1,8 @@
 {
+	"extends": "./node_modules/@cubing/dev-config/ts/es2022-types/no-dom/tsconfig.json",
 	"compilerOptions": {
-		"moduleResolution": "bundler",
-		"strict": true,
-		"target": "es2022",
-		"module": "es2022",
-		"declaration": true,
-		"emitDeclarationOnly": true,
-		"outDir": "./.temp/types/",
-		"skipLibCheck": true,
-		"allowJs": true,
-		"alwaysStrict": true,
-		"noImplicitAny": true,
-		"noImplicitReturns": true,
-		"noImplicitOverride": true,
-		"noUnusedLocals": true,
-		"strictNullChecks": true,
-		"noFallthroughCasesInSwitch": true
+		"noEmit": true,
+		"outDir": "./.temp/types/"
 	},
-	"files": ["./src/index.ts"]
+	"exclude": ["./dist/"]
 }
